@@ -128,6 +128,9 @@ DEFAULTS = {
         'retrieve': 'read',
         'destroy': 'delete'
     },
+
+    # Docs
+    'API_DOCS_NAMESPACE': 'api-docs',
 }
 
 

@@ -55,7 +55,7 @@ def include_docs_urls(
         patterns=None, generator_class=SchemaGenerator,
         authentication_classes=api_settings.DEFAULT_AUTHENTICATION_CLASSES,
         permission_classes=api_settings.DEFAULT_PERMISSION_CLASSES,
-        renderer_classes=None):
+        renderer_classes=None, namespace=api_settings.API_DOCS_NAMESPACE):
     docs_view = get_docs_view(
         title=title,
         description=description,
@@ -81,4 +81,4 @@ def include_docs_urls(
         url(r'^$', docs_view, name='docs-index'),
         url(r'^schema.js$', schema_js_view, name='schema-js')
     ]
-    return include((urls, 'api-docs'), namespace='api-docs')
+    return include((urls, 'api-docs'), namespace=namespace)
